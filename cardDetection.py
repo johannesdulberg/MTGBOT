@@ -45,7 +45,7 @@ def lookUp(x,card):
     w = needle.shape[1]
     h = needle.shape[0]
     cv2.rectangle(hay, max_loc, (max_loc[0] + w, max_loc[1] + h), (0,255,255), 2)
-    threshold = .55
+    threshold = .5
     yloc, xloc = np.where(result >= threshold)
     rectangles = []
     for (x, y) in zip(xloc, yloc):
@@ -57,12 +57,13 @@ def lookUp(x,card):
         return False
 
     if len(rectangles)==1 and card=="land" and landplay==False:
-        print("PLAYING A LAND")
         return 2
 
     if len(rectangles)==1:
+        print("CARD FOUND: ",card)
         return True
-        
+
+
     else:
         return False
 

@@ -3,6 +3,8 @@ import time
 from variables import *
 from basicFunctionality import *
 
+
+
 def goto(num,cardCount):
     """
     Moves the Cursor to the position of a Card
@@ -18,6 +20,7 @@ def goto(num,cardCount):
     
     return x
 
+
 def landUp():
     """
     Playes a Land and changes lands and mana +1
@@ -27,14 +30,15 @@ def landUp():
     global lands
     global mana
     global landplay
-
+    print("LANDS: ",lands)
     lands+=1
+    print("PLAYING LAND")
+    print("LANDS: ",lands)
     if lands==2:
         rev()
     mana+=1
     landplay=True
     pa.click(clicks=2, interval=0.25)
-    
 
         
 def playSheet(hand,phase):
@@ -43,9 +47,11 @@ def playSheet(hand,phase):
     (list hand, int turn) -> None
     """
 
+
     global lands
     global mana
-
+    print("PLAYPHASE WITH ",lands," LANDS" )
+    mana=lands
     if phase==0:
         for i in eval(f"land{lands}Plays"):
             hand=playCard(hand,i)
@@ -89,12 +95,15 @@ def playCard(hand,card):
         pa.click(10,500) #Somewhere
         time.sleep(0.3)
         pa.click(809,157) #Opponent
-        time.sleep(4) #Wait for opponent to resolve todo
         pa.click(1000,460,clicks=2, interval=0.1) #for double Cards like light up the stage
         pa.click(600,460,clicks=2, interval=0.03)
         pa.keyDown("z") #fallback if card isnt playable
         pa.keyUp("z")
-
+        time.sleep(1)
+        
+        while pa.pixel(1450,650)[0]+pa.pixel(1450,650)[1]+pa.pixel(1450,650)[2]<120 and pa.pixel(1450,620)[0]+pa.pixel(1450,620)[1]+pa.pixel(1450,620)[2]>450:
+            time.sleep(1)
+            
         """removes the played card and saves a new hand with new positions"""
         hand=list(map(lambda x: x[0],hand))
         hand.remove(card)
@@ -120,4 +129,5 @@ def getPositon(hand,card):
         return hand[cardIndex][1]
 
     else:
+
         return False

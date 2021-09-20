@@ -10,7 +10,7 @@ def countCardsBool(pos):
     (int x) -> bool
     """
 
-    pa.moveTo(pos,940,0.2)
+    pa.moveTo(pos,940,0.05)
     if pa.pixel(pos-20,940)[0]+pa.pixel(pos-20,940)[1]+pa.pixel(pos-20,940)[2]<120 and pa.pixel(pos,920)[0]+pa.pixel(pos,920)[1]+pa.pixel(pos,920)[2]>450:
         return True
     else:

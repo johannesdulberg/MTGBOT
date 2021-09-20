@@ -7,7 +7,8 @@ def isMain():
     Checks if its first mainphase
     () -> bool
     """
-    if pa.pixel(698,791)[0]>200:
+
+    if pa.pixel(698,791)[0]>200 and not pa.pixel(800,800)[0]>230:
         return True           
     else:
         return False
@@ -17,7 +18,7 @@ def isSecondMain():
     Checks if its second mainphase
     () -> bool
     """
-    if pa.pixel(904,791)[0]>200:
+    if pa.pixel(904,791)[0]>200 and not pa.pixel(800,800)[0]>230:
         return True           
     else:
         return False
@@ -28,6 +29,8 @@ def newGame():
     Starts a new game from home menu and accepts the Hand without mulligan
     () -> None
     """
+    
+    
 
     print("NEW GAME")
     while 1:
@@ -52,17 +55,41 @@ def gameOver():
     ()-> bool
     
     """
-    gameOverCounter=0
-    if pa.pixel(1441 ,897)[0]>230 and pa.pixel(1441 ,897)[1]>230 and pa.pixel(1441 ,897)[2]>230 and pa.pixel(1312,87)[2]>200 and pa.pixel(1312,87)[0]<140:
+    
+    victory= pa.pixel(610,480)[0]>230 and pa.pixel(610,480)[1]>230 and pa.pixel(610,480)[2]>230 and pa.pixel(942,553)[0]>230 and pa.pixel(942,553)[1]>230 and pa.pixel(942,553)[2]>230
+    loss=pa.pixel(673,538)[0]>230 and pa.pixel(673,538)[1]>230 and pa.pixel(673,538)[2]>230 and pa.pixel(925,495)[0]>230 and pa.pixel(925,495)[1]>230 and pa.pixel(925,495)[2]>230
+    if victory or loss:
+        print("GG")
+        time.sleep(0.3)
 
-        gameOverCounter+=1
-        if gameOverCounter>2:
+        if victory:
+            print("VICTORY")
+            rev()
+            return True
+
+        if loss:
             print("GAME OVER")
             rev()
-            return False
-        else:
             return True
+
+        else:
+            return False
+
     else:   
-        gameOverCounter=0
-        return True
+        return False
         
+def skipPhaseButtonIsSkippable():
+    """
+    checks if the skip to next Phase/resolve button is clickable
+    () -> bool
+    """
+    if (pa.pixel(1556,849)[0]>230 and pa.pixel(1556,849)[2]<100) or (pa.pixel(1556,849)[0]<150 and pa.pixel(1556,849)[2]>240):
+        return True
+    else:
+        return False
+
+def doubleBlock():
+    if pa.pixel(800,800)[0]>230:
+        return True
+    else:
+        return False

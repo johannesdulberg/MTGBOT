@@ -1,10 +1,11 @@
-
+import pyautogui as pa
 """GLOBAL VARIABLES"""
+
 
 lands=0
 mana=0
 landplay=False
-
+    
 
 
 """CARD SLURS""" 
@@ -82,17 +83,18 @@ land11Plays2=["light","redfell","chandra","calv","goblin","grim","grim","spitter
 """PLAYSHEET FOR LEONIDAS"""
 
 """FRIST MAIN PHASE"""
+land0Plays=[]
 land1Plays=["grim","spitter","tin"]
-land2Plays=["calv","py","grim","grim","spitter","spitter","inst","rapt","tin","tin","shock","shock"]
-land3Plays=["chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","shock","shock"]
-land4Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","shock","shock","light"]
-land5Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","shock","shock","light"]
-land6Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","shock","shock","light"]
-land7Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","shock","shock","light"]
-land8Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","shock","shock","light"]
-land9Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","shock","shock","light"]
-land10Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","shock","shock","light"]
-land11Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","shock","shock","light"]
+land2Plays=["calv","py","grim","grim","spitter","spitter","inst","rapt","tin","tin"]
+land3Plays=["chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt"]
+land4Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","light"]
+land5Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","light"]
+land6Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","light"]
+land7Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","light"]
+land8Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","light"]
+land9Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","light"]
+land10Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","light"]
+land11Plays=["redfell","chandra","calv","goblin","grim","grim","spitter","spitter","tin","tin","py","inst","rapt","light"]
 
 """SECOND MAIN PHASE"""
 land1Plays2=["grim","spitter","tin"]
